@@ -32,37 +32,15 @@ public class MainApp {
 
       List<User> users = userService.listUsers();
       for (User user : users) {
-         System.out.println("Id = "+user.getId());
-         System.out.println("First Name = "+user.getFirstName());
-         System.out.println("Last Name = "+user.getLastName());
-         System.out.println("Email = "+user.getEmail());
-         if (user.getCar() != null) {
-            System.out.println(" Id car = " + user.getCar().getId());
-            System.out.println(" Model car = " + user.getCar().getModel());
-            System.out.println(" Series car = " + user.getCar().getSeries());
-         }
+         System.out.println(user);
          System.out.println();
       }
 
       User userFind = userService.findUserCar(car6);
-      System.out.println("Id = " + userFind.getId()
-              + "\nFirst Name = "+userFind.getFirstName()
-              + "\nLast Name = "+userFind.getLastName()
-              + "\nEmail = "+userFind.getEmail()
-              + "\n Id car = " + userFind.getCar().getId()
-              + "\n Model car = " + userFind.getCar().getModel()
-              + "\n Series car = " + userFind.getCar().getSeries()
-      );
+      System.out.println(userFind);
 
       userFind = userService.findUserCar(new Car("model6", 6));
-      System.out.println("Id = " + userFind.getId()
-              + "\nFirst Name = "+userFind.getFirstName()
-              + "\nLast Name = "+userFind.getLastName()
-              + "\nEmail = "+userFind.getEmail()
-              + "\n Id car = " + userFind.getCar().getId()
-              + "\n Model car = " + userFind.getCar().getModel()
-              + "\n Series car = " + userFind.getCar().getSeries()
-      );
+      System.out.println(userFind);
 
       context.close();
    }

@@ -73,4 +73,14 @@ public class User {
       this.car = car;
       car.setUser(this); // Создание двухсторонней связи с таблицей Car
    }
+
+   @Override
+   public String toString() {
+      return "User: " +
+              "\n Id = " + id +
+              "\n First Name = " + firstName +
+              "\n Last Name = " + lastName +
+              "\n Email = " + email +
+              ((car != null) ? ("\n" + car) : "");
+   }
 }
